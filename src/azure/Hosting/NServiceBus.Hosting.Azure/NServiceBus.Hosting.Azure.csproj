@@ -77,9 +77,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\build\output\NServiceBus.Core.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Hosting">
-      <HintPath>..\..\..\..\build\hosting\NServiceBus.Hosting.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.NHibernate, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\build\azure\NServiceBus.Azure\NServiceBus.NHibernate.dll</HintPath>
@@ -130,6 +127,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\hosting\NServiceBus.Hosting\NServiceBus.Hosting.csproj">
+      <Project>{B5F333D1-D6B1-49FB-82F6-74641E5D11E3}</Project>
+      <Name>NServiceBus.Hosting %28NServiceBus.Hosting\NServiceBus.Hosting%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
