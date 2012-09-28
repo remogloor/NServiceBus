@@ -50,22 +50,12 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus.ObjectBuilder, Version=1.9.3.39473, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Utils.Reflection, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Utils.Reflection.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    
     <Compile Include="CommonObjectBuilder.cs" />
     <Compile Include="ComponentConfig.cs" />
     <Compile Include="IContainer.cs" />
@@ -88,6 +78,16 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\utils\NServiceBus.Utils.Reflection\NServiceBus.Utils.Reflection.csproj">
+      <Project>{B82E9E46-A768-4E48-9A94-0DD4F8379366}</Project>
+      <Name>NServiceBus.Utils.Reflection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

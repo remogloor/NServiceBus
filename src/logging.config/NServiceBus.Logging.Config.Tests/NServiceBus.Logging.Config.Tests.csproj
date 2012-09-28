@@ -34,17 +34,8 @@
     <Reference Include="log4net">
       <HintPath>..\..\..\lib\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Logging">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Logging.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\..\..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="nunit.mocks">
       <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
@@ -65,6 +56,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\logging\NServiceBus.Logging\NServiceBus.Logging.csproj">
+      <Project>{12EDCB05-7B96-4CF8-A968-492388B97BB5}</Project>
+      <Name>NServiceBus.Logging %28NServiceBus.Logging\NServiceBus.Logging%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Logging.Config\NServiceBus.Logging.Config.csproj">
       <Project>{CF91119E-9F1C-435E-8086-A81A16E34AE3}</Project>
       <Name>NServiceBus.Logging.Config</Name>

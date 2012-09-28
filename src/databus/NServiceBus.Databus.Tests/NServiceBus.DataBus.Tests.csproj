@@ -51,28 +51,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.MessageHeaders">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.MessageHeaders.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.MessageInterfaces">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.MessageInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.MessageInterfaces.MessageMapper.Reflection">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.MessageInterfaces.MessageMapper.Reflection.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.ObjectBuilder.DefaultBuilder">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.DefaultBuilder.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -121,6 +102,34 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\headers\NServiceBus.MessageHeaders\NServiceBus.MessageHeaders.csproj">
+      <Project>{9EE6366B-E0A4-45B5-AE08-E8CEF58862E4}</Project>
+      <Name>NServiceBus.MessageHeaders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\messageInterfaces\NServiceBus.MessageInterfaces.MessageMapper.Reflection\NServiceBus.MessageInterfaces.MessageMapper.Reflection.csproj">
+      <Project>{4DF0FE9E-3608-426F-B6CB-AC55FE04D997}</Project>
+      <Name>NServiceBus.MessageInterfaces.MessageMapper.Reflection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\ObjectBuilder.Common\NServiceBus.ObjectBuilder.DefaultBuilder\NServiceBus.ObjectBuilder.DefaultBuilder.csproj">
+      <Project>{A37DAEEC-1FB1-4637-B0E7-3A986A29B0DE}</Project>
+      <Name>NServiceBus.ObjectBuilder.DefaultBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\messageInterfaces\NServiceBus.MessageInterfaces\NServiceBus.MessageInterfaces.csproj">
+      <Project>{F3D13CDB-B5AE-4CEE-BDA9-6A7007D09FA6}</Project>
+      <Name>NServiceBus.MessageInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Databus\NServiceBus.DataBus.csproj">
       <Project>{EDFCAFE5-9C1D-4339-9DC5-2CD899E9E605}</Project>
       <Name>NServiceBus.DataBus %28NServiceBus.Databus\NServiceBus.DataBus%29</Name>

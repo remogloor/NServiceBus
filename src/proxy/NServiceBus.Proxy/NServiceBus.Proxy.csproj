@@ -49,41 +49,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Logging">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Logging.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder">
       <HintPath>..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Monitoring">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Monitoring.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Queuing">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Queuing.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Queuing.Msmq">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Queuing.Msmq.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Subscriptions">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Subscriptions.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Subscriptions.Msmq">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Subscriptions.Msmq.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Transport">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Transport.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Transport.Transactional">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Transport.Transactional.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -132,6 +99,56 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\NServiceBus.Unicast.Subscriptions.Msmq\NServiceBus.Unicast.Subscriptions.Msmq.csproj">
+      <Project>{6657A1B8-3773-46A4-88F2-A421E074D35F}</Project>
+      <Name>NServiceBus.Unicast.Subscriptions.Msmq %28NServiceBus.Unicast.Subscriptions.Msmq\NServiceBus.Unicast.Subscriptions.Msmq%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\queuing\NServiceBus.Unicast.Queuing.Msmq\NServiceBus.Unicast.Queuing.Msmq.csproj">
+      <Project>{4D4FA577-EFBD-4DFF-BFFC-2DA1A71F36ED}</Project>
+      <Name>NServiceBus.Unicast.Queuing.Msmq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\transport\NServiceBus.Unicast.Transport.Transactional\NServiceBus.Unicast.Transport.Transactional.csproj">
+      <Project>{2A228EF8-9C46-43F8-AF56-18569B443CF9}</Project>
+      <Name>NServiceBus.Unicast.Transport.Transactional</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\logging\NServiceBus.Logging\NServiceBus.Logging.csproj">
+      <Project>{12EDCB05-7B96-4CF8-A968-492388B97BB5}</Project>
+      <Name>NServiceBus.Logging %28NServiceBus.Logging\NServiceBus.Logging%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicastTransport\NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport.csproj">
+      <Project>{D9628493-605A-4259-ADD3-7732F0DEFFBB}</Project>
+      <Name>NServiceBus.Unicast.Transport %28NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Monitoring\NServiceBus.Unicast.Monitoring.csproj">
+      <Project>{B074D7F7-6DCA-45B8-8DC4-D952D227BEC3}</Project>
+      <Name>NServiceBus.Unicast.Monitoring</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Subscriptions\NServiceBus.Unicast.Subscriptions.csproj">
+      <Project>{CD9FA43E-A56D-4B62-8245-F911B137EC09}</Project>
+      <Name>NServiceBus.Unicast.Subscriptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
+      <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
+      <Name>NServiceBus.Unicast</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

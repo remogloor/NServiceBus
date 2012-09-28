@@ -53,24 +53,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus.Logging">
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus, Version=1.9.0.28497, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.MessageInterfaces, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.MessageInterfaces.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Utils.Reflection, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Utils.Reflection.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -79,7 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    
     <Compile Include="MessageMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,6 +80,24 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\logging\NServiceBus.Logging\NServiceBus.Logging.csproj">
+      <Project>{12EDCB05-7B96-4CF8-A968-492388B97BB5}</Project>
+      <Name>NServiceBus.Logging %28NServiceBus.Logging\NServiceBus.Logging%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\messageInterfaces\NServiceBus.MessageInterfaces\NServiceBus.MessageInterfaces.csproj">
+      <Project>{F3D13CDB-B5AE-4CEE-BDA9-6A7007D09FA6}</Project>
+      <Name>NServiceBus.MessageInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\utils\NServiceBus.Utils.Reflection\NServiceBus.Utils.Reflection.csproj">
+      <Project>{B82E9E46-A768-4E48-9A94-0DD4F8379366}</Project>
+      <Name>NServiceBus.Utils.Reflection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

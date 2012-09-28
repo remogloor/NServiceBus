@@ -33,27 +33,6 @@
     <DocumentationFile>bin\Release\NServiceBus.Notifications.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Installation">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Installation.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Installation.Windows">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Installation.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Satellites">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Satellites.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Queuing">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Queuing.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Utils">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Utils.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +45,36 @@
     <Compile Include="SendEmail.cs" />
     <Compile Include="NotificationSatellite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\installation\NServiceBus.Installation.Windows\NServiceBus.Installation.Windows.csproj">
+      <Project>{96D09A75-E2EE-4442-B130-9AF87536E96C}</Project>
+      <Name>NServiceBus.Installation.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\satellites\NServiceBus.Satellites\NServiceBus.Satellites.csproj">
+      <Project>{7CD050E5-B7FE-448A-954F-3D1D6DCD8D25}</Project>
+      <Name>NServiceBus.Satellites</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utils\NServiceBus.Utils.csproj">
+      <Project>{2616579A-202F-48F6-8A7F-6A6AA9288CA7}</Project>
+      <Name>NServiceBus.Utils %28src\NServiceBus.Utils%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

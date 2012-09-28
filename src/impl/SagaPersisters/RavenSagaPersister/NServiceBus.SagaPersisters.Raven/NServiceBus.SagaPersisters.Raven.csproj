@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -38,12 +38,6 @@
     <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder">
       <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
     </Reference>
@@ -68,6 +62,22 @@
     <Compile Include="RavenSagaPersister.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\NServiceBus.Saga\NServiceBus.Saga.csproj">
+      <Project>{C1DE5465-4694-475A-8D06-E17733C41D69}</Project>
+      <Name>NServiceBus.Saga</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Persistence\RavenPersistence\NServiceBus.Persistence.Raven\NServiceBus.Persistence.Raven.csproj">
       <Project>{37CB5DE9-013D-4779-9D35-342F902E8DE1}</Project>
       <Name>NServiceBus.Persistence.Raven</Name>

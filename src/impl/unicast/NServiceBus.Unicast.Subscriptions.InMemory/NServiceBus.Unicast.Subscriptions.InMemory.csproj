@@ -32,21 +32,9 @@
     <DocumentationFile>bin\Release\NServiceBus.Unicast.Subscriptions.InMemory.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Config, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Subscriptions, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Unicast.Subscriptions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -54,13 +42,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    
     <Compile Include="Config\ConfigureMsmqSubscriptionStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="InMemorySubscriptionStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unicast\NServiceBus.Unicast.Subscriptions\NServiceBus.Unicast.Subscriptions.csproj">
+      <Project>{CD9FA43E-A56D-4B62-8245-F911B137EC09}</Project>
+      <Name>NServiceBus.Unicast.Subscriptions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

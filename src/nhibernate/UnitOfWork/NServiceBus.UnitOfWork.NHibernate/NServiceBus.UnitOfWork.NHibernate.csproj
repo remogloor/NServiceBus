@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -39,9 +39,6 @@
     <Reference Include="NHibernate">
       <HintPath>..\..\..\..\packages\NHibernate.3.3.1.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core">
       <HintPath>..\..\..\..\build\output\NServiceBus.Core.dll</HintPath>
     </Reference>
@@ -62,6 +59,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unitofwork\NServiceBus.UnitOfWork\NServiceBus.UnitOfWork.csproj">
+      <Project>{5664D546-9F42-4DED-9BC1-B6799D3A6AD0}</Project>
+      <Name>NServiceBus.UnitOfWork</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

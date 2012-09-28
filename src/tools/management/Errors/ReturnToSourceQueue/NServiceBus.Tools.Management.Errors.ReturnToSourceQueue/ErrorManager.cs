@@ -1,3 +1,5 @@
+using NServiceBus.Faults;
+
 namespace NServiceBus.Tools.Management.Errors.ReturnToSourceQueue
 {
     using System;

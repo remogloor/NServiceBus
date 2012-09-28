@@ -31,30 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Installation, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Installation.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.MessageInterfaces">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.MessageInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.MessageInterfaces.MessageMapper.Reflection">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.MessageInterfaces.MessageMapper.Reflection.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Serializers.Binary">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Serializers.Binary.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Serializers.XML">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Serializers.XML.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Queuing">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Unicast.Queuing.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\..\..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -80,6 +56,38 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\messageInterfaces\NServiceBus.MessageInterfaces\NServiceBus.MessageInterfaces.csproj">
+      <Project>{F3D13CDB-B5AE-4CEE-BDA9-6A7007D09FA6}</Project>
+      <Name>NServiceBus.MessageInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\messageInterfaces\NServiceBus.MessageInterfaces.MessageMapper.Reflection\NServiceBus.MessageInterfaces.MessageMapper.Reflection.csproj">
+      <Project>{4DF0FE9E-3608-426F-B6CB-AC55FE04D997}</Project>
+      <Name>NServiceBus.MessageInterfaces.MessageMapper.Reflection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Serializers\NServiceBus.Serializers.Binary\NServiceBus.Serializers.Binary.csproj">
+      <Project>{4AB4015A-2DBF-44F9-9119-0E095703EC2D}</Project>
+      <Name>NServiceBus.Serializers.Binary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Serializers\NServiceBus.Serializers.XML\NServiceBus.Serializers.XML.csproj">
+      <Project>{4D9A660B-C2AF-42A8-AEB4-E2F97ED1CB3C}</Project>
+      <Name>NServiceBus.Serializers.XML</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Unicast.Queuing.SQLServer\NServiceBus.Unicast.Queuing.SQLServer.csproj">
       <Project>{AF2C96DD-9894-4664-AB46-91EE0971A6FB}</Project>
       <Name>NServiceBus.Unicast.Queuing.SQLServer</Name>

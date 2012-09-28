@@ -31,38 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Faults, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Faults.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Faults.Forwarder, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Faults.Forwarder.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Satellites, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Satellites.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Queuing, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Unicast.Queuing.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Transport, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Unicast.Transport.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Utils, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Utils.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -86,6 +54,38 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\faults\NServiceBus.Faults\NServiceBus.Faults.csproj">
+      <Project>{EF79596C-0636-4CE0-945C-966F95F3909F}</Project>
+      <Name>NServiceBus.Faults %28NServiceBus.Faults\NServiceBus.Faults%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\faults\NServiceBus.Faults.Forwarder\NServiceBus.Faults.Forwarder.csproj">
+      <Project>{81D0B1CB-9620-4C0E-ACDA-7ABB6359FB74}</Project>
+      <Name>NServiceBus.Faults.Forwarder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\satellites\NServiceBus.Satellites\NServiceBus.Satellites.csproj">
+      <Project>{7CD050E5-B7FE-448A-954F-3D1D6DCD8D25}</Project>
+      <Name>NServiceBus.Satellites</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unicastTransport\NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport.csproj">
+      <Project>{D9628493-605A-4259-ADD3-7732F0DEFFBB}</Project>
+      <Name>NServiceBus.Unicast.Transport %28NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\utils\NServiceBus.Utils.csproj">
+      <Project>{2616579A-202F-48F6-8A7F-6A6AA9288CA7}</Project>
+      <Name>NServiceBus.Utils %28src\NServiceBus.Utils%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Management.Retries\NServiceBus.Management.Retries.csproj">
       <Project>{7939938E-5004-486E-A125-57235C8B7376}</Project>
       <Name>NServiceBus.Management.Retries</Name>

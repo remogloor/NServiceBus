@@ -35,9 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core">
       <HintPath>..\..\..\build\output\NServiceBus.Core.dll</HintPath>
     </Reference>
@@ -79,6 +76,40 @@
     <Compile Include="Roles\RoleManager.cs" />
     <Compile Include="Wcf\WcfManager.cs" />
     <Compile Include="Wcf\WcfServiceHost.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\ObjectBuilder.Common\NServiceBus.ObjectBuilder.DefaultBuilder\NServiceBus.ObjectBuilder.DefaultBuilder.csproj">
+      <Project>{A37DAEEC-1FB1-4637-B0E7-3A986A29B0DE}</Project>
+      <Name>NServiceBus.ObjectBuilder.DefaultBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\logging\NServiceBus.Logging\NServiceBus.Logging.csproj">
+      <Project>{12EDCB05-7B96-4CF8-A968-492388B97BB5}</Project>
+      <Name>NServiceBus.Logging %28NServiceBus.Logging\NServiceBus.Logging%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Config\NServiceBus.Unicast.Config.csproj">
+      <Project>{B6D6B021-F477-4C8C-B19E-9CB2ABBCA095}</Project>
+      <Name>NServiceBus.Unicast.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
+      <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
+      <Name>NServiceBus.Unicast</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utils\NServiceBus.Utils.Reflection\NServiceBus.Utils.Reflection.csproj">
+      <Project>{B82E9E46-A768-4E48-9A94-0DD4F8379366}</Project>
+      <Name>NServiceBus.Utils.Reflection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

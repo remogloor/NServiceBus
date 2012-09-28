@@ -34,29 +34,8 @@
     <DocumentationFile>bin\Release\NServiceBus.Timeout.Core.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Logging">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Logging.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder">
       <HintPath>..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Queuing">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Queuing.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Transport">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Transport.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Utils">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,6 +48,48 @@
     <Compile Include="TimeoutData.cs" />
     <Compile Include="DefaultTimeoutManager.cs" />
     <Compile Include="TimeoutMessageConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus.MessageMutator\NServiceBus.MessageMutator.csproj">
+      <Project>{0CAB0C44-B469-4956-BCA6-71EB26EAB9FB}</Project>
+      <Name>NServiceBus.MessageMutator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus.Saga\NServiceBus.Saga.csproj">
+      <Project>{C1DE5465-4694-475A-8D06-E17733C41D69}</Project>
+      <Name>NServiceBus.Saga</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\logging\NServiceBus.Logging\NServiceBus.Logging.csproj">
+      <Project>{12EDCB05-7B96-4CF8-A968-492388B97BB5}</Project>
+      <Name>NServiceBus.Logging %28NServiceBus.Logging\NServiceBus.Logging%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicastTransport\NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport.csproj">
+      <Project>{D9628493-605A-4259-ADD3-7732F0DEFFBB}</Project>
+      <Name>NServiceBus.Unicast.Transport %28NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
+      <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
+      <Name>NServiceBus.Unicast</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utils\NServiceBus.Utils.csproj">
+      <Project>{2616579A-202F-48F6-8A7F-6A6AA9288CA7}</Project>
+      <Name>NServiceBus.Utils %28src\NServiceBus.Utils%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

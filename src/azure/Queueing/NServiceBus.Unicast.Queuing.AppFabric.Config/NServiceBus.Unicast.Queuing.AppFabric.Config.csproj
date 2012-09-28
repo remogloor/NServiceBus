@@ -39,9 +39,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Azure\Microsoft.WindowsAzure.ServiceRuntime.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core">
       <HintPath>..\..\..\..\build\output\NServiceBus.Core.dll</HintPath>
     </Reference>
@@ -67,6 +64,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Unicast.Queuing.AppFabric\NServiceBus.Unicast.Queuing.AppFabric.csproj">
       <Project>{911C5871-B059-4F8D-99B3-86F13CDEFC86}</Project>
       <Name>NServiceBus.Unicast.Queuing.AppFabric</Name>

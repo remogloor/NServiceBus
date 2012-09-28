@@ -2,7 +2,6 @@
 using System.Linq;
 using NServiceBus.Config;
 using NServiceBus.MessageMutator;
-using NServiceBus.Unicast.Transport;
 
 namespace NServiceBus.Compatibility
 {

@@ -31,32 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\build\nservicebus\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Faults">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Faults.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Faults.InMemory">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Faults.InMemory.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Installation">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Installation.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder">
       <HintPath>..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Transport">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Transport.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Transport.Transactional">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Transport.Transactional.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
@@ -87,6 +63,42 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\faults\NServiceBus.Faults\NServiceBus.Faults.csproj">
+      <Project>{EF79596C-0636-4CE0-945C-966F95F3909F}</Project>
+      <Name>NServiceBus.Faults %28NServiceBus.Faults\NServiceBus.Faults%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\faults\NServiceBus.Faults.InMemory\NServiceBus.Faults.InMemory.csproj">
+      <Project>{192A06E8-1BFE-4D03-9902-B8F529EDE6F4}</Project>
+      <Name>NServiceBus.Faults.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\transport\NServiceBus.Unicast.Transport.Transactional\NServiceBus.Unicast.Transport.Transactional.csproj">
+      <Project>{2A228EF8-9C46-43F8-AF56-18569B443CF9}</Project>
+      <Name>NServiceBus.Unicast.Transport.Transactional</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicastTransport\NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport.csproj">
+      <Project>{D9628493-605A-4259-ADD3-7732F0DEFFBB}</Project>
+      <Name>NServiceBus.Unicast.Transport %28NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
+      <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
+      <Name>NServiceBus.Unicast</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Satellites\NServiceBus.Satellites.csproj">
       <Project>{7CD050E5-B7FE-448A-954F-3D1D6DCD8D25}</Project>
       <Name>NServiceBus.Satellites</Name>

@@ -38,9 +38,6 @@
     <Reference Include="log4net">
       <HintPath>..\..\..\..\lib\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core">
       <HintPath>..\..\..\..\build\output\NServiceBus.Core.dll</HintPath>
     </Reference>
@@ -61,6 +58,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus.MessageMutator\NServiceBus.MessageMutator.csproj">
+      <Project>{0CAB0C44-B469-4956-BCA6-71EB26EAB9FB}</Project>
+      <Name>NServiceBus.MessageMutator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus.Saga\NServiceBus.Saga.csproj">
+      <Project>{C1DE5465-4694-475A-8D06-E17733C41D69}</Project>
+      <Name>NServiceBus.Saga</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\ObjectBuilder.Common\NServiceBus.ObjectBuilder.DefaultBuilder\NServiceBus.ObjectBuilder.DefaultBuilder.csproj">
+      <Project>{A37DAEEC-1FB1-4637-B0E7-3A986A29B0DE}</Project>
+      <Name>NServiceBus.ObjectBuilder.DefaultBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\Serializers\NServiceBus.Serializers.XML.Config\NServiceBus.Serializers.XML.Config.csproj">
+      <Project>{17629A13-3ED4-4E88-B70C-DFFCBAE96A6A}</Project>
+      <Name>NServiceBus.Serializers.XML.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\unicast\queuing\NServiceBus.Unicast.Queuing.Msmq.Config\NServiceBus.Unicast.Queuing.Msmq.Config.csproj">
+      <Project>{2702CE9B-839F-40DD-8738-5C1B95170F0B}</Project>
+      <Name>NServiceBus.Unicast.Queuing.Msmq.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\unicast\queuing\NServiceBus.Unicast.Queuing.Msmq\NServiceBus.Unicast.Queuing.Msmq.csproj">
+      <Project>{4D4FA577-EFBD-4DFF-BFFC-2DA1A71F36ED}</Project>
+      <Name>NServiceBus.Unicast.Queuing.Msmq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unicast\NServiceBus.Unicast.Config\NServiceBus.Unicast.Config.csproj">
+      <Project>{B6D6B021-F477-4C8C-B19E-9CB2ABBCA095}</Project>
+      <Name>NServiceBus.Unicast.Config</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

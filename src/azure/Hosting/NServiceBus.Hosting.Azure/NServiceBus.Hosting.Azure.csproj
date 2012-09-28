@@ -63,12 +63,8 @@
     <Reference Include="NHibernate">
       <HintPath>..\..\..\..\packages\NHibernate.3.3.1.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate.Drivers.Azure.TableStorage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\azure\NServiceBus.Azure\NHibernate.Drivers.Azure.TableStorage.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
+    <Reference Include="NHibernate.Drivers.Azure.TableStorage">
+      <HintPath>..\..\..\..\lib\NHibernate.Drivers.Azure.TableStorage.dll</HintPath>
     </Reference>
     <Reference Include="NServiceBus.Azure">
       <HintPath>..\..\..\..\build\output\NServiceBus.Azure.dll</HintPath>
@@ -129,9 +125,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\hosting\NServiceBus.Hosting\NServiceBus.Hosting.csproj">
       <Project>{B5F333D1-D6B1-49FB-82F6-74641E5D11E3}</Project>
       <Name>NServiceBus.Hosting %28NServiceBus.Hosting\NServiceBus.Hosting%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\ObjectBuilder.Common\NServiceBus.ObjectBuilder.DefaultBuilder\NServiceBus.ObjectBuilder.DefaultBuilder.csproj">
+      <Project>{A37DAEEC-1FB1-4637-B0E7-3A986A29B0DE}</Project>
+      <Name>NServiceBus.ObjectBuilder.DefaultBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

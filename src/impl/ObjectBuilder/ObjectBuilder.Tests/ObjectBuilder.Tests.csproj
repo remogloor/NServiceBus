@@ -73,10 +73,6 @@
     <Reference Include="Ninject.Extensions.NamedScope">
       <HintPath>..\..\..\..\packages\Ninject.Extensions.NamedScope.3.0.0.5\lib\net40\Ninject.Extensions.NamedScope.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\build\output\NServiceBus.Core.dll</HintPath>
@@ -109,6 +105,10 @@
     <Compile Include="When_registering_components.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ObjectBuilder.Autofac\ObjectBuilder.Autofac.csproj">
       <Project>{73EC4EBE-826D-4A0A-8837-51D3458FC2A8}</Project>
       <Name>ObjectBuilder.Autofac</Name>

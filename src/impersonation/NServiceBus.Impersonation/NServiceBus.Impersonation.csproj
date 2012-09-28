@@ -31,27 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Config">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder">
       <HintPath>..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Config">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Config.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Transport">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Transport.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -65,6 +46,36 @@
   <ItemGroup>
     <Compile Include="ImpersonationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus.MessageMutator\NServiceBus.MessageMutator.csproj">
+      <Project>{0CAB0C44-B469-4956-BCA6-71EB26EAB9FB}</Project>
+      <Name>NServiceBus.MessageMutator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicastTransport\NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport.csproj">
+      <Project>{D9628493-605A-4259-ADD3-7732F0DEFFBB}</Project>
+      <Name>NServiceBus.Unicast.Transport %28NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Config\NServiceBus.Unicast.Config.csproj">
+      <Project>{B6D6B021-F477-4C8C-B19E-9CB2ABBCA095}</Project>
+      <Name>NServiceBus.Unicast.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
+      <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
+      <Name>NServiceBus.Unicast</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -42,9 +42,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\packages\NHibernate.3.3.1.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core">
       <HintPath>..\..\..\..\build\output\NServiceBus.Core.dll</HintPath>
     </Reference>
@@ -76,6 +73,42 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\installation\NServiceBus.Installation.Windows\NServiceBus.Installation.Windows.csproj">
+      <Project>{96D09A75-E2EE-4442-B130-9AF87536E96C}</Project>
+      <Name>NServiceBus.Installation.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\Serializers\NServiceBus.Serializers.Json\NServiceBus.Serializers.Json.csproj">
+      <Project>{0ACDE3AD-9B80-47DE-A0C0-176DECD3C87F}</Project>
+      <Name>NServiceBus.Serializers.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\messageInterfaces\NServiceBus.MessageInterfaces\NServiceBus.MessageInterfaces.csproj">
+      <Project>{F3D13CDB-B5AE-4CEE-BDA9-6A7007D09FA6}</Project>
+      <Name>NServiceBus.MessageInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\timeout\NServiceBus.Timeout.Core\NServiceBus.Timeout.Core.csproj">
+      <Project>{729BE51A-4138-4503-A9CF-108F084D30D1}</Project>
+      <Name>NServiceBus.Timeout.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\utils\NServiceBus.Utils.csproj">
+      <Project>{2616579A-202F-48F6-8A7F-6A6AA9288CA7}</Project>
+      <Name>NServiceBus.Utils %28src\NServiceBus.Utils%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\NServiceBus.Persistence.NHibernate\NServiceBus.Persistence.NHibernate.csproj">
       <Project>{C01D0E0E-4712-4A5B-9C79-7E0424811703}</Project>
       <Name>NServiceBus.Persistence.NHibernate</Name>

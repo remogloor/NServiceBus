@@ -32,10 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus, Version=2.1.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core">
       <HintPath>..\..\..\build\output\NServiceBus.Core.dll</HintPath>
     </Reference>
@@ -58,6 +54,10 @@
     <Compile Include="Timeouts.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Testing.csproj">
       <Project>{8B815173-9AFA-4D95-BAB4-686C298F17DA}</Project>
       <Name>NServiceBus.Testing %28NServiceBus.Testing\NServiceBus.Testing%29</Name>

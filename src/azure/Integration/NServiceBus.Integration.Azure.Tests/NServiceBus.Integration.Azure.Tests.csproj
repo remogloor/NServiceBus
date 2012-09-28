@@ -34,9 +34,6 @@
     <Reference Include="log4net">
       <HintPath>..\..\..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core">
       <HintPath>..\..\..\..\build\output\NServiceBus.Core.dll</HintPath>
     </Reference>
@@ -59,6 +56,14 @@
     <Compile Include="When_using_the_azure_configuration_source.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Integration.Azure\NServiceBus.Integration.Azure.csproj">
       <Project>{641D0198-FE99-42F4-B6CB-A14D0E9F639E}</Project>
       <Name>NServiceBus.Integration.Azure</Name>

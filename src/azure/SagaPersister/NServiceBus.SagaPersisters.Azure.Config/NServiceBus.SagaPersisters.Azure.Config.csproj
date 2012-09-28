@@ -44,9 +44,6 @@
     <Reference Include="NHibernate.Drivers.Azure.TableStorage">
       <HintPath>..\..\..\..\lib\NHibernate.Drivers.Azure.TableStorage.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core">
       <HintPath>..\..\..\..\build\output\NServiceBus.Core.dll</HintPath>
     </Reference>
@@ -73,6 +70,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus.Saga\NServiceBus.Saga.csproj">
+      <Project>{C1DE5465-4694-475A-8D06-E17733C41D69}</Project>
+      <Name>NServiceBus.Saga</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\Sagas\NServiceBus.Sagas.Impl\NServiceBus.Sagas.Impl.csproj">
+      <Project>{48008EAF-C32A-4EB5-A27E-54062637EA0F}</Project>
+      <Name>NServiceBus.Sagas.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\nhibernate\SagaPersister\NServiceBus.SagaPersisters.NHibernate.AutoPersistence\NServiceBus.SagaPersisters.NHibernate.AutoPersistence.csproj">
+      <Project>{B19F49E5-7059-4C18-91E7-D35DA4398D0C}</Project>
+      <Name>NServiceBus.SagaPersisters.NHibernate.AutoPersistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\nhibernate\SagaPersister\NServiceBus.SagaPersisters.NHibernate\NServiceBus.SagaPersisters.NHibernate.csproj">
+      <Project>{4A904B94-8DC4-4C02-A4FD-374E78990374}</Project>
+      <Name>NServiceBus.SagaPersisters.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

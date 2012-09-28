@@ -31,34 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus, Version=4.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Installation, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Installation.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.MessageInterfaces">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.MessageInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Serializers.Binary">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Serializers.Binary.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Serializers.Json">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Serializers.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Queuing">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Unicast.Queuing.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Transport">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Unicast.Transport.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Utils">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Utils.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +44,44 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\messageInterfaces\NServiceBus.MessageInterfaces\NServiceBus.MessageInterfaces.csproj">
+      <Project>{F3D13CDB-B5AE-4CEE-BDA9-6A7007D09FA6}</Project>
+      <Name>NServiceBus.MessageInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\unicastTransport\NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport.csproj">
+      <Project>{D9628493-605A-4259-ADD3-7732F0DEFFBB}</Project>
+      <Name>NServiceBus.Unicast.Transport %28NServiceBus.Unicast.Transport\NServiceBus.Unicast.Transport%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\utils\NServiceBus.Utils.csproj">
+      <Project>{2616579A-202F-48F6-8A7F-6A6AA9288CA7}</Project>
+      <Name>NServiceBus.Utils %28src\NServiceBus.Utils%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Serializers\NServiceBus.Serializers.Binary\NServiceBus.Serializers.Binary.csproj">
+      <Project>{4AB4015A-2DBF-44F9-9119-0E095703EC2D}</Project>
+      <Name>NServiceBus.Serializers.Binary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Serializers\NServiceBus.Serializers.Json\NServiceBus.Serializers.Json.csproj">
+      <Project>{0ACDE3AD-9B80-47DE-A0C0-176DECD3C87F}</Project>
+      <Name>NServiceBus.Serializers.Json</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

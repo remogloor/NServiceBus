@@ -57,10 +57,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Reference Include="NServiceBus, Version=1.9.3.40920, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\build\output\NServiceBus.Core.dll</HintPath>
@@ -102,6 +98,40 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\core\NServiceBus.Saga\NServiceBus.Saga.csproj">
+      <Project>{C1DE5465-4694-475A-8D06-E17733C41D69}</Project>
+      <Name>NServiceBus.Saga</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\impl\faults\NServiceBus.Faults.InMemory.Config\NServiceBus.Faults.InMemory.Config.csproj">
+      <Project>{7604F70B-DDF2-474A-97E7-6FB1C888D2FA}</Project>
+      <Name>NServiceBus.Faults.InMemory.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\impl\ObjectBuilder.Common\NServiceBus.ObjectBuilder.DefaultBuilder\NServiceBus.ObjectBuilder.DefaultBuilder.csproj">
+      <Project>{A37DAEEC-1FB1-4637-B0E7-3A986A29B0DE}</Project>
+      <Name>NServiceBus.ObjectBuilder.DefaultBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\impl\Serializers\NServiceBus.Serializers.XML.Config\NServiceBus.Serializers.XML.Config.csproj">
+      <Project>{17629A13-3ED4-4E88-B70C-DFFCBAE96A6A}</Project>
+      <Name>NServiceBus.Serializers.XML.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\messageInterfaces\NServiceBus.MessageInterfaces\NServiceBus.MessageInterfaces.csproj">
+      <Project>{F3D13CDB-B5AE-4CEE-BDA9-6A7007D09FA6}</Project>
+      <Name>NServiceBus.MessageInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

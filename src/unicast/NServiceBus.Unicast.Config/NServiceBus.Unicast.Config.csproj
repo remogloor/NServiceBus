@@ -55,41 +55,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Reference Include="NServiceBus.Logging">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Logging.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Installation">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Installation.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Installation.Windows">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Installation.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Licensing, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Licensing.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="NServiceBus.MasterNode">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.MasterNode.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Transport.Msmq.Config">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Transport.Msmq.Config.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Utils">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Obsolete">
       <HintPath>..\..\..\packages\Obsolete.Fody.1.0.0.0\Lib\NET40\Obsolete.dll</HintPath>
@@ -113,10 +81,49 @@
     <Compile Include="UnicastBusConfig.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\installation\NServiceBus.Installation.Windows\NServiceBus.Installation.Windows.csproj">
+      <Project>{96D09A75-E2EE-4442-B130-9AF87536E96C}</Project>
+      <Name>NServiceBus.Installation.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\licensing\NServiceBus.Licensing\NServiceBus.Licensing.csproj">
+      <Project>{2622AC07-F86A-465E-98EF-5DA72A87BDE7}</Project>
+      <Name>NServiceBus.Licensing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\NServiceBus.Unicast.Msmq\NServiceBus.Unicast.Transport.Msmq.Config\NServiceBus.Unicast.Transport.Msmq.Config.csproj">
+      <Project>{2D3D9033-200C-423E-BF8A-8FB40D8D1572}</Project>
+      <Name>NServiceBus.Unicast.Transport.Msmq.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\logging\NServiceBus.Logging\NServiceBus.Logging.csproj">
+      <Project>{12EDCB05-7B96-4CF8-A968-492388B97BB5}</Project>
+      <Name>NServiceBus.Logging %28NServiceBus.Logging\NServiceBus.Logging%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\masterNode\NServiceBus.MasterNode\NServiceBus.MasterNode.csproj">
+      <Project>{C2AD5F30-0A7D-4146-A9D7-4136B886961B}</Project>
+      <Name>NServiceBus.MasterNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utils\NServiceBus.Utils.csproj">
+      <Project>{2616579A-202F-48F6-8A7F-6A6AA9288CA7}</Project>
+      <Name>NServiceBus.Utils %28src\NServiceBus.Utils%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
       <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
       <Name>NServiceBus.Unicast</Name>
-      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

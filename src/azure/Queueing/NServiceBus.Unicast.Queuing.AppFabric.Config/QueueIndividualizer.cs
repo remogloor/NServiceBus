@@ -1,6 +1,5 @@
 using System.Globalization;
 using Microsoft.WindowsAzure.ServiceRuntime;
-using NServiceBus.Config.ConfigurationSource;
 
 namespace NServiceBus.Config
 {

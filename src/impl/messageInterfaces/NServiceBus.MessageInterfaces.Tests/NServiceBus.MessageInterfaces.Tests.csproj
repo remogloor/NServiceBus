@@ -31,15 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.MessageInterfaces">
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.MessageInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Utils.Reflection">
-      <HintPath>..\..\..\..\build\nservicebus.core\NServiceBus.Utils.Reflection.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -48,11 +39,22 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="When_mapping_interfaces.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\messageInterfaces\NServiceBus.MessageInterfaces\NServiceBus.MessageInterfaces.csproj">
+      <Project>{F3D13CDB-B5AE-4CEE-BDA9-6A7007D09FA6}</Project>
+      <Name>NServiceBus.MessageInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\utils\NServiceBus.Utils.Reflection\NServiceBus.Utils.Reflection.csproj">
+      <Project>{B82E9E46-A768-4E48-9A94-0DD4F8379366}</Project>
+      <Name>NServiceBus.Utils.Reflection</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.MessageInterfaces.MessageMapper.Reflection\NServiceBus.MessageInterfaces.MessageMapper.Reflection.csproj">
       <Project>{4DF0FE9E-3608-426F-B6CB-AC55FE04D997}</Project>
       <Name>NServiceBus.MessageInterfaces.MessageMapper.Reflection</Name>

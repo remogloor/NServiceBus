@@ -54,37 +54,10 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus, Version=1.9.3.40920, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\output\NServiceBus.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Config, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Installation">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Installation.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Installation.Windows">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Installation.Windows.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.MasterNode">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.MasterNode.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Queuing">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Queuing.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Unicast.Queuing.Msmq">
-      <HintPath>..\..\..\build\nservicebus.core\NServiceBus.Unicast.Queuing.Msmq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -98,6 +71,38 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\installation\NServiceBus.Installation.Windows\NServiceBus.Installation.Windows.csproj">
+      <Project>{96D09A75-E2EE-4442-B130-9AF87536E96C}</Project>
+      <Name>NServiceBus.Installation.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\queuing\NServiceBus.Unicast.Queuing.Msmq\NServiceBus.Unicast.Queuing.Msmq.csproj">
+      <Project>{4D4FA577-EFBD-4DFF-BFFC-2DA1A71F36ED}</Project>
+      <Name>NServiceBus.Unicast.Queuing.Msmq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\masterNode\NServiceBus.MasterNode\NServiceBus.MasterNode.csproj">
+      <Project>{C2AD5F30-0A7D-4146-A9D7-4136B886961B}</Project>
+      <Name>NServiceBus.MasterNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Unicast.Distributor\NServiceBus.Unicast.Distributor.csproj">
       <Project>{D142D372-C9FA-4505-A6EB-E919746F0FF1}</Project>
       <Name>NServiceBus.Unicast.Distributor</Name>

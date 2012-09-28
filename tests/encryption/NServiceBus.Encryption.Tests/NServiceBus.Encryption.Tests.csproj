@@ -65,6 +65,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\core\NServiceBus.MessageMutator\NServiceBus.MessageMutator.csproj">
+      <Project>{0CAB0C44-B469-4956-BCA6-71EB26EAB9FB}</Project>
+      <Name>NServiceBus.MessageMutator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\src\encryption\NServiceBus.Encryption\NServiceBus.Encryption.csproj">
       <Project>{5F4AD8CE-D651-4891-BBAD-116F341163C1}</Project>
       <Name>NServiceBus.Encryption</Name>

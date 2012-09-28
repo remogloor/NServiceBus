@@ -56,10 +56,6 @@
     <AssemblyOriginatorKeyFile>..\..\..\..\..\NServiceBus.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus, Version=1.9.3.40920, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\build\output\NServiceBus.Core.dll</HintPath>
@@ -73,6 +69,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Tools.Management.Errors.ReturnToSourceQueue\NServiceBus.Tools.Management.Errors.ReturnToSourceQueue.csproj">
       <Project>{B9CE6C00-1AE2-4125-BD1A-A7AABA1072CA}</Project>
       <Name>NServiceBus.Tools.Management.Errors.ReturnToSourceQueue</Name>

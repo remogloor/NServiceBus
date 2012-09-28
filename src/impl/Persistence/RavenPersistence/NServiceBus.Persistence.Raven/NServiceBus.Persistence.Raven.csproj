@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -37,27 +37,8 @@
     <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\build\output\NServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Config">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Installation">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Installation.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Installation.Windows">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.Installation.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.MasterNode">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.MasterNode.dll</HintPath>
-    </Reference>
     <Reference Include="NServiceBus.ObjectBuilder">
       <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.ObjectBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.UnitOfWork">
-      <HintPath>..\..\..\..\..\build\nservicebus.core\NServiceBus.UnitOfWork.dll</HintPath>
     </Reference>
     <Reference Include="Obsolete">
       <HintPath>..\..\..\..\..\packages\Obsolete.Fody.1.0.0.0\Lib\NET40\Obsolete.dll</HintPath>
@@ -105,7 +86,40 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\NServiceBus.Saga\NServiceBus.Saga.csproj">
+      <Project>{C1DE5465-4694-475A-8D06-E17733C41D69}</Project>
+      <Name>NServiceBus.Saga</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\NServiceBus\NServiceBus.csproj">
+      <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
+      <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\masterNode\NServiceBus.MasterNode\NServiceBus.MasterNode.csproj">
+      <Project>{C2AD5F30-0A7D-4146-A9D7-4136B886961B}</Project>
+      <Name>NServiceBus.MasterNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\unitofwork\NServiceBus.UnitOfWork\NServiceBus.UnitOfWork.csproj">
+      <Project>{5664D546-9F42-4DED-9BC1-B6799D3A6AD0}</Project>
+      <Name>NServiceBus.UnitOfWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\installation\NServiceBus.Installation.Windows\NServiceBus.Installation.Windows.csproj">
+      <Project>{96D09A75-E2EE-4442-B130-9AF87536E96C}</Project>
+      <Name>NServiceBus.Installation.Windows</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Raven.Server.exe" />
   </ItemGroup>
