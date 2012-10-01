@@ -1,4 +1,6 @@
-﻿namespace NServiceBus.Testing.Tests
+﻿using NServiceBus.Config.ConfigurationSource;
+
+namespace NServiceBus.Testing.Tests
 {
     using System;
     using MyMessages;

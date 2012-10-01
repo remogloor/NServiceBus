@@ -12,6 +12,8 @@
     <AssemblyName>NServiceBus.TimeoutPersisters.NHibernate</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -123,4 +125,5 @@
   </Target>
   -->
   <Import Project="..\..\..\..\tools\Fody\Fody.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 </Project>

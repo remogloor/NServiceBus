@@ -13,6 +13,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -106,9 +108,129 @@
     <EmbeddedResource Include="Content\Help.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\NServiceBus.Saga\NServiceBus.Saga.csproj">
+      <Project>{C1DE5465-4694-475A-8D06-E17733C41D69}</Project>
+      <Name>NServiceBus.Saga</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\core\NServiceBus\NServiceBus.csproj">
       <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
       <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\distributor\NServiceBus.Distributor\NServiceBus.Distributor.csproj">
+      <Project>{B14659D0-9371-420B-A82A-1E06AFF04624}</Project>
+      <Name>NServiceBus.Distributor %28NServiceBus.Distributor\NServiceBus.Distributor%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\faults\NServiceBus.Faults\NServiceBus.Faults.csproj">
+      <Project>{EF79596C-0636-4CE0-945C-966F95F3909F}</Project>
+      <Name>NServiceBus.Faults %28NServiceBus.Faults\NServiceBus.Faults%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gateway\NServiceBus.Gateway\NServiceBus.Gateway.csproj">
+      <Project>{1BBA08E8-EC86-4BA3-B6B7-88C6D241AE18}</Project>
+      <Name>NServiceBus.Gateway</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impersonation\NServiceBus.Impersonation\NServiceBus.Impersonation.csproj">
+      <Project>{BFD784DB-1880-4115-A73F-083ED8617419}</Project>
+      <Name>NServiceBus.Impersonation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\faults\NServiceBus.Faults.Forwarder.Config\NServiceBus.Faults.Forwarder.Config.csproj">
+      <Project>{7CDCE732-D913-4F7D-89CA-4BF4FA3A9405}</Project>
+      <Name>NServiceBus.Faults.Forwarder.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\faults\NServiceBus.Faults.InMemory.Config\NServiceBus.Faults.InMemory.Config.csproj">
+      <Project>{7604F70B-DDF2-474A-97E7-6FB1C888D2FA}</Project>
+      <Name>NServiceBus.Faults.InMemory.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\installation\NServiceBus.Installation.Windows\NServiceBus.Installation.Windows.csproj">
+      <Project>{96D09A75-E2EE-4442-B130-9AF87536E96C}</Project>
+      <Name>NServiceBus.Installation.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\Persistence\RavenPersistence\NServiceBus.Persistence.Raven\NServiceBus.Persistence.Raven.csproj">
+      <Project>{37CB5DE9-013D-4779-9D35-342F902E8DE1}</Project>
+      <Name>NServiceBus.Persistence.Raven</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\SagaPersisters\InMemory\NServiceBus.SagaPersisters.InMemory\NServiceBus.SagaPersisters.InMemory.csproj">
+      <Project>{C59E2545-D26E-4E38-B7A9-8E31A6CA82B1}</Project>
+      <Name>NServiceBus.SagaPersisters.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\SagaPersisters\RavenSagaPersister\NServiceBus.SagaPersisters.Raven\NServiceBus.SagaPersisters.Raven.csproj">
+      <Project>{A263BC37-3427-4B2A-89BD-D0FC976E5822}</Project>
+      <Name>NServiceBus.SagaPersisters.Raven</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\Sagas\NServiceBus.Sagas.Impl\NServiceBus.Sagas.Impl.csproj">
+      <Project>{48008EAF-C32A-4EB5-A27E-54062637EA0F}</Project>
+      <Name>NServiceBus.Sagas.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\NServiceBus.Unicast.Subscriptions.InMemory\NServiceBus.Unicast.Subscriptions.InMemory.csproj">
+      <Project>{34BFC9A1-7A28-48C9-B909-397B05204BD9}</Project>
+      <Name>NServiceBus.Unicast.Subscriptions.InMemory %28NServiceBus.Unicast.Subscriptions.InMemory\NServiceBus.Unicast.Subscriptions.InMemory%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\NServiceBus.Unicast.Subscriptions.Msmq\NServiceBus.Unicast.Subscriptions.Msmq.Config\NServiceBus.Unicast.Subscriptions.Msmq.Config.csproj">
+      <Project>{585AB2C3-17B3-49B4-BA59-B5861317D7B3}</Project>
+      <Name>NServiceBus.Unicast.Subscriptions.Msmq.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\NServiceBus.Unicast.Subscriptions.Raven\NServiceBus.Unicast.Subscriptions.Raven.csproj">
+      <Project>{052D329F-14B5-4A56-8F04-C620F49A5C3A}</Project>
+      <Name>NServiceBus.Unicast.Subscriptions.Raven</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\queuing\NServiceBus.Unicast.Queuing.Msmq.Config\NServiceBus.Unicast.Queuing.Msmq.Config.csproj">
+      <Project>{2702CE9B-839F-40DD-8738-5C1B95170F0B}</Project>
+      <Name>NServiceBus.Unicast.Queuing.Msmq.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\queuing\NServiceBus.Unicast.Queuing.Msmq\NServiceBus.Unicast.Queuing.Msmq.csproj">
+      <Project>{4D4FA577-EFBD-4DFF-BFFC-2DA1A71F36ED}</Project>
+      <Name>NServiceBus.Unicast.Queuing.Msmq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\impl\unicast\transport\NServiceBus.Unicast.Transport.Transactional.Config\NServiceBus.Unicast.Transport.Transactional.Config.csproj">
+      <Project>{A0941A26-E057-4437-B031-4B2EFED18F47}</Project>
+      <Name>NServiceBus.Unicast.Transport.Transactional.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\logging.config\NServiceBus.Logging.Config\NServiceBus.Logging.Config.csproj">
+      <Project>{CF91119E-9F1C-435E-8086-A81A16E34AE3}</Project>
+      <Name>NServiceBus.Logging.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\logging\NServiceBus.Logging\NServiceBus.Logging.csproj">
+      <Project>{12EDCB05-7B96-4CF8-A968-492388B97BB5}</Project>
+      <Name>NServiceBus.Logging %28NServiceBus.Logging\NServiceBus.Logging%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\masterNode\NServiceBus.MasterNode\NServiceBus.MasterNode.csproj">
+      <Project>{C2AD5F30-0A7D-4146-A9D7-4136B886961B}</Project>
+      <Name>NServiceBus.MasterNode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\timeout\NServiceBus.Timeout.Hosting.Windows\NServiceBus.Timeout.Hosting.Windows.csproj">
+      <Project>{1606D22D-7F42-4E97-9AED-D35DC0490B36}</Project>
+      <Name>NServiceBus.Timeout.Hosting.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Config\NServiceBus.Unicast.Config.csproj">
+      <Project>{B6D6B021-F477-4C8C-B19E-9CB2ABBCA095}</Project>
+      <Name>NServiceBus.Unicast.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Monitoring\NServiceBus.Unicast.Monitoring.csproj">
+      <Project>{B074D7F7-6DCA-45B8-8DC4-D952D227BEC3}</Project>
+      <Name>NServiceBus.Unicast.Monitoring</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Subscriptions\NServiceBus.Unicast.Subscriptions.csproj">
+      <Project>{CD9FA43E-A56D-4B62-8245-F911B137EC09}</Project>
+      <Name>NServiceBus.Unicast.Subscriptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
+      <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
+      <Name>NServiceBus.Unicast</Name>
     </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Hosting\NServiceBus.Hosting.csproj">
       <Project>{B5F333D1-D6B1-49FB-82F6-74641E5D11E3}</Project>
@@ -129,4 +251,5 @@
   <PropertyGroup>
     <notused>xcopy /Y "$(ProjectDir)$(OutDir)*.*" "$(ProjectDir)..\..\..\build\host\"</notused>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 </Project>

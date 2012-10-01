@@ -13,6 +13,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,16 +91,81 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\config\NServiceBus.Config\NServiceBus.Config.csproj">
+      <Project>{444FAA3D-D5E1-498E-9AE1-201DB619CAF0}</Project>
+      <Name>NServiceBus.Config %28NServiceBus.Config\NServiceBus.Config%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\core\NServiceBus\NServiceBus.csproj">
       <Project>{73867D40-8CBB-48E9-BFFA-12BBDD48A341}</Project>
       <Name>NServiceBus %28NServiceBus\NServiceBus%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\hosting\NServiceBus.Hosting\NServiceBus.Hosting.csproj">
+      <Project>{B5F333D1-D6B1-49FB-82F6-74641E5D11E3}</Project>
+      <Name>NServiceBus.Hosting %28NServiceBus.Hosting\NServiceBus.Hosting%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impersonation\NServiceBus.Impersonation\NServiceBus.Impersonation.csproj">
+      <Project>{BFD784DB-1880-4115-A73F-083ED8617419}</Project>
+      <Name>NServiceBus.Impersonation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\Sagas\NServiceBus.Sagas.Impl\NServiceBus.Sagas.Impl.csproj">
+      <Project>{48008EAF-C32A-4EB5-A27E-54062637EA0F}</Project>
+      <Name>NServiceBus.Sagas.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\Serializers\NServiceBus.Serializers.Json\NServiceBus.Serializers.Json.csproj">
+      <Project>{0ACDE3AD-9B80-47DE-A0C0-176DECD3C87F}</Project>
+      <Name>NServiceBus.Serializers.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\unicast\transport\NServiceBus.Unicast.Transport.Transactional.Config\NServiceBus.Unicast.Transport.Transactional.Config.csproj">
+      <Project>{A0941A26-E057-4437-B031-4B2EFED18F47}</Project>
+      <Name>NServiceBus.Unicast.Transport.Transactional.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\satellites\NServiceBus.Satellites\NServiceBus.Satellites.csproj">
+      <Project>{7CD050E5-B7FE-448A-954F-3D1D6DCD8D25}</Project>
+      <Name>NServiceBus.Satellites</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\timeout\NServiceBus.Timeout.Core\NServiceBus.Timeout.Core.csproj">
+      <Project>{729BE51A-4138-4503-A9CF-108F084D30D1}</Project>
+      <Name>NServiceBus.Timeout.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\timeout\NServiceBus.Timeout.Hosting.Windows\NServiceBus.Timeout.Hosting.Windows.csproj">
+      <Project>{1606D22D-7F42-4E97-9AED-D35DC0490B36}</Project>
+      <Name>NServiceBus.Timeout.Hosting.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unicast\NServiceBus.Unicast.Config\NServiceBus.Unicast.Config.csproj">
+      <Project>{B6D6B021-F477-4C8C-B19E-9CB2ABBCA095}</Project>
+      <Name>NServiceBus.Unicast.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unicast\NServiceBus.Unicast.Queuing\NServiceBus.Unicast.Queuing.csproj">
+      <Project>{04E1CE2E-C0F5-492B-BF5B-C7E9DABE92F7}</Project>
+      <Name>NServiceBus.Unicast.Queuing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unicast\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
+      <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
+      <Name>NServiceBus.Unicast</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Hosting\NServiceBus.Hosting.Azure\NServiceBus.Hosting.Azure.csproj">
       <Project>{6591ED91-F9A1-4CC3-813E-A33E07439D49}</Project>
       <Name>NServiceBus.Hosting.Azure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Integration\NServiceBus.Integration.Azure\NServiceBus.Integration.Azure.csproj">
+      <Project>{641D0198-FE99-42F4-B6CB-A14D0E9F639E}</Project>
+      <Name>NServiceBus.Integration.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queueing\NServiceBus.Unicast.Queuing.AppFabric\NServiceBus.Unicast.Queuing.AppFabric.csproj">
+      <Project>{911C5871-B059-4F8D-99B3-86F13CDEFC86}</Project>
+      <Name>NServiceBus.Unicast.Queuing.AppFabric</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queueing\NServiceBus.Unicast.Queuing.Azure\NServiceBus.Unicast.Queuing.Azure.csproj">
+      <Project>{D12E0534-9C6F-4E39-AC68-4212FF13E7F1}</Project>
+      <Name>NServiceBus.Unicast.Queuing.Azure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

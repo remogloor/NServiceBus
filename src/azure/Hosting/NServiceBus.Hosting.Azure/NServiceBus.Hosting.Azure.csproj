@@ -13,6 +13,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -137,16 +139,85 @@
       <Project>{B5F333D1-D6B1-49FB-82F6-74641E5D11E3}</Project>
       <Name>NServiceBus.Hosting %28NServiceBus.Hosting\NServiceBus.Hosting%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\impersonation\NServiceBus.Impersonation\NServiceBus.Impersonation.csproj">
+      <Project>{BFD784DB-1880-4115-A73F-083ED8617419}</Project>
+      <Name>NServiceBus.Impersonation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\impl\ObjectBuilder.Common\NServiceBus.ObjectBuilder.DefaultBuilder\NServiceBus.ObjectBuilder.DefaultBuilder.csproj">
       <Project>{A37DAEEC-1FB1-4637-B0E7-3A986A29B0DE}</Project>
       <Name>NServiceBus.ObjectBuilder.DefaultBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\Sagas\NServiceBus.Sagas.Impl\NServiceBus.Sagas.Impl.csproj">
+      <Project>{48008EAF-C32A-4EB5-A27E-54062637EA0F}</Project>
+      <Name>NServiceBus.Sagas.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\Serializers\NServiceBus.Serializers.Json\NServiceBus.Serializers.Json.csproj">
+      <Project>{0ACDE3AD-9B80-47DE-A0C0-176DECD3C87F}</Project>
+      <Name>NServiceBus.Serializers.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\impl\unicast\transport\NServiceBus.Unicast.Transport.Transactional.Config\NServiceBus.Unicast.Transport.Transactional.Config.csproj">
+      <Project>{A0941A26-E057-4437-B031-4B2EFED18F47}</Project>
+      <Name>NServiceBus.Unicast.Transport.Transactional.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\installation\NServiceBus.Installation\NServiceBus.Installation.csproj">
+      <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
+      <Name>NServiceBus.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\logging.config\NServiceBus.Logging.Config\NServiceBus.Logging.Config.csproj">
+      <Project>{CF91119E-9F1C-435E-8086-A81A16E34AE3}</Project>
+      <Name>NServiceBus.Logging.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\logging\NServiceBus.Logging\NServiceBus.Logging.csproj">
+      <Project>{12EDCB05-7B96-4CF8-A968-492388B97BB5}</Project>
+      <Name>NServiceBus.Logging %28NServiceBus.Logging\NServiceBus.Logging%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\nhibernate\SagaPersister\NServiceBus.SagaPersisters.NHibernate.Config\NServiceBus.SagaPersisters.NHibernate.Config.csproj">
+      <Project>{1EDB9B0E-2D06-41DC-854B-F9BF63181999}</Project>
+      <Name>NServiceBus.SagaPersisters.NHibernate.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\nhibernate\Subscriptions\NServiceBus.Unicast.Subscriptions.NHibernate\NServiceBus.Unicast.Subscriptions.NHibernate.csproj">
+      <Project>{2DE05EFC-F7A6-4E63-8F88-5F52704F2A03}</Project>
+      <Name>NServiceBus.Unicast.Subscriptions.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\nhibernate\UnitOfWork\NServiceBus.UnitOfWork.NHibernate.Config\NServiceBus.UnitOfWork.NHibernate.Config.csproj">
+      <Project>{EC6FD140-4970-4414-A972-AE3D3576328E}</Project>
+      <Name>NServiceBus.UnitOfWork.NHibernate.Config</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\ObjectBuilder\ObjectBuilder.csproj">
       <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
       <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\unicast\NServiceBus.Unicast.Config\NServiceBus.Unicast.Config.csproj">
+      <Project>{B6D6B021-F477-4C8C-B19E-9CB2ABBCA095}</Project>
+      <Name>NServiceBus.Unicast.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\unicast\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
+      <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
+      <Name>NServiceBus.Unicast</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\NServiceBus.Integration.Azure\NServiceBus.Integration.Azure.csproj">
+      <Project>{641D0198-FE99-42F4-B6CB-A14D0E9F639E}</Project>
+      <Name>NServiceBus.Integration.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queueing\NServiceBus.Unicast.Queuing.AppFabric.Config\NServiceBus.Unicast.Queuing.AppFabric.Config.csproj">
+      <Project>{350CA11F-E647-47F6-B9A3-1E1653B8D4B0}</Project>
+      <Name>NServiceBus.Unicast.Queuing.AppFabric.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Queueing\NServiceBus.Unicast.Queuing.Azure.Config\NServiceBus.Unicast.Queuing.Azure.Config.csproj">
+      <Project>{87C365D3-7D4A-4686-A042-5E7B83869CBF}</Project>
+      <Name>NServiceBus.Unicast.Queuing.Azure.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SagaPersister\NServiceBus.SagaPersisters.Azure.Config\NServiceBus.SagaPersisters.Azure.Config.csproj">
+      <Project>{E9BCCCDC-5D5D-48AB-BF7A-5A2FE669D353}</Project>
+      <Name>NServiceBus.SagaPersisters.Azure.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SubscriptionStorage\NServiceBus.Unicast.Subscriptions.Azure.TableStorage.csproj">
+      <Project>{FB2ACC79-1E04-47CA-8F4B-31327E10B5E3}</Project>
+      <Name>NServiceBus.Unicast.Subscriptions.Azure.TableStorage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

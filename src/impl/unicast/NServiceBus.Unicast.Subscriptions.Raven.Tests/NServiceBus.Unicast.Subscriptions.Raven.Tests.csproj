@@ -12,6 +12,8 @@
     <AssemblyName>NServiceBus.Unicast.Subscriptions.Raven.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -134,7 +136,7 @@
     </ProjectReference>
     <ProjectReference Include="..\NServiceBus.Unicast.Subscriptions.Raven\NServiceBus.Unicast.Subscriptions.Raven.csproj">
       <Project>{052D329F-14B5-4A56-8F04-C620F49A5C3A}</Project>
-      <Name>NServiceBus.Unicast.Subscriptions.Raven %28NServiceBus.Unicast.Subscriptions.Raven\NServiceBus.Unicast.Subscriptions.Raven%29</Name>
+      <Name>NServiceBus.Unicast.Subscriptions.Raven</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +144,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

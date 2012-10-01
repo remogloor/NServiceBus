@@ -6,7 +6,6 @@ namespace NServiceBus.SQLite
 	using System.Linq;
 	using System.Reflection;
 	using System.Web;
-	using Config;
 
 	public class AssemblyResolver : INeedInitialization
 	{

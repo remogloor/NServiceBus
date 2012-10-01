@@ -13,6 +13,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -94,13 +96,25 @@
       <Project>{E05C9496-8C83-403B-81EE-722FE9673EC4}</Project>
       <Name>NServiceBus.Installation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\integration\NServiceBus.Integration.WCF\NServiceBus.Integration.WCF.csproj">
+      <Project>{8CF614E1-FEAC-4C92-9F64-EF809C0BBC0A}</Project>
+      <Name>NServiceBus.Integration.WCF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\logging\NServiceBus.Logging\NServiceBus.Logging.csproj">
       <Project>{12EDCB05-7B96-4CF8-A968-492388B97BB5}</Project>
       <Name>NServiceBus.Logging %28NServiceBus.Logging\NServiceBus.Logging%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ObjectBuilder\ObjectBuilder.csproj">
+      <Project>{C831B94E-6D08-404C-BA80-B8E8442EA9DE}</Project>
+      <Name>ObjectBuilder %28ObjectBuilder\ObjectBuilder%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Config\NServiceBus.Unicast.Config.csproj">
       <Project>{B6D6B021-F477-4C8C-B19E-9CB2ABBCA095}</Project>
       <Name>NServiceBus.Unicast.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\unicast\NServiceBus.Unicast.Monitoring\NServiceBus.Unicast.Monitoring.csproj">
+      <Project>{B074D7F7-6DCA-45B8-8DC4-D952D227BEC3}</Project>
+      <Name>NServiceBus.Unicast.Monitoring</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\unicast\NServiceBus.Unicast\NServiceBus.Unicast.csproj">
       <Project>{EB2C42A2-70FD-4469-959B-C577470B001B}</Project>
@@ -120,4 +134,5 @@
   </Target>
   -->
   <Import Project="..\..\..\tools\Fody\Fody.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 </Project>

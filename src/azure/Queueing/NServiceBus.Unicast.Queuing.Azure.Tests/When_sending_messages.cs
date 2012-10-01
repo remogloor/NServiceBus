@@ -1,6 +1,5 @@
 using System.Transactions;
 using Microsoft.WindowsAzure.StorageClient;
-using NServiceBus.Unicast.Transport;
 using NUnit.Framework;
 
 namespace NServiceBus.Unicast.Queuing.Azure.Tests
